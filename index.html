@@ -3,10 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./output.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="./src/output.css" rel="stylesheet">
     <title>Greek Lessons</title>
 </head>
 <body>
     
+    <div class="headline flex justify-center">
+        <h1 class="font-extralight p-6">Affordable Online Greek Lessons</h1>
+    </div>
+    
+    <div x-data="{ hover: false }" 
+        @mouseenter="hover = true" 
+        @mouseleave="hover = false" 
+        class="relative group flex justify-center items-center w-full h-full overflow-hidden">
+    <!-- Image -->
+    <img src="./img/angel.jpg" 
+        class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
+    <!-- Dark overlay and text -->
+    <div :class="hover ? 'bg-black/50' : 'bg-transparent'" 
+        class="absolute inset-0 transition-all duration-300 ease-in-out flex justify-center items-center">
+    <span x-show="hover" 
+            class="flex text-center font-extralight gap-4 text-white text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Learn Greek with Personalized Lessons!
+
+            Frequency: Lessons available 2 to 5 times per week.
+            Rate: Only 5 euros per hour.
+            Taught by a Native: Enjoy expert teaching by a Greek native speaker.
+
+            Customized Learning:
+                Personalized notes and study plans tailored to your goals.
+                Interactive conversations to practice real-life Greek.
+                
+            Diverse Learning Materials:
+                Explore books and shows for immersive learning.
+                Discover Greek music to enrich your language skills.
+
+Start your journey to fluency and experience the culture firsthand!
+        </span>
+    </div>
+</div>
+
+    
+    <footer class="flex justify-center p-3 mt-6">
+        <p class="italic font-extralight"> ࣪⭑ ˖ made by yours truly sunnycc17 ˖ ࣪⭑</p>
+    </footer>
 </body>
 </html>
